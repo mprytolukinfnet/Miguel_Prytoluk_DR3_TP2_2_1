@@ -20,10 +20,3 @@ fake_llm = FakeListLLM(responses=responses)
 async def chat(input: TextInput):
     response = fake_llm(input.query)
     return {"query": input.query, "response": response}
-
-'''
-Executar com
-curl -X POST "http://127.0.0.1:8000/chat/" \
--H "Content-Type: application/json" \
--d '{"query": "Qual a capital da França?"}'
-'''
